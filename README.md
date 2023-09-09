@@ -8,3 +8,5 @@
 ============
 - https://github.com/iTrellis/workflow/tree/main
 - https://github.com/matryer/flower/blob/master/flower.go
+- https://github.com/hibiken/asynq
+- https://github.com/gocelery/gocelery
