@@ -1,6 +1,10 @@
 package workflow
 
 type WorkflowDefinitionInterface interface {
+	Data() map[string]string
+	DataChanged() map[string]string
+	MarkAsNotDirty()
+
 	ID() string
 	SetID(id string) WorkflowDefinitionInterface
 
@@ -9,6 +13,9 @@ type WorkflowDefinitionInterface interface {
 
 	CreatedAt() string
 	SetCreatedAt(createdAt string) WorkflowDefinitionInterface
+
+	SoftDeletedAt() string
+	SetSoftDeletedAt(softDeletedAt string) WorkflowDefinitionInterface
 
 	UpdatedAt() string
 	SetUpdatedAt(updatedAt string) WorkflowDefinitionInterface
