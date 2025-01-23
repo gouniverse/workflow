@@ -281,6 +281,10 @@ func Test_Store_WorkflowDefinitionUpdate(t *testing.T) {
 		t.Fatal(err.Error())
 	}
 
+	if workflowDefinition == nil {
+		t.Fatal(`Expected workflowDefinition but received "nil"`)
+	}
+
 	if workflowDefinition.Name() != "Workflow 2" {
 		t.Fatal(`Expected "Workflow 2" but received workflowDefinition`)
 	}

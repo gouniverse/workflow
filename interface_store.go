@@ -71,33 +71,312 @@ type StoreInterface interface {
 }
 
 type EdgeQueryInterface interface {
+	Validate() error
+
+	IsCountOnly() bool
+	SetCountOnly(countOnly bool) WorkflowDefinitionQueryInterface
+
+	Columns() []string
+	SetColumns(columns []string) WorkflowDefinitionQueryInterface
+
+	SoftDeletedIncluded() bool
+	SetSoftDeletedIncluded(softDeletedIncluded bool) WorkflowDefinitionQueryInterface
+
+	HasCreatedAtGte() bool
+	CreatedAtGte() string
+	SetCreatedAtGte(createdAtGte string) WorkflowDefinitionQueryInterface
+
+	HasCreatedAtLte() bool
+	CreatedAtLte() string
+	SetCreatedAtLte(createdAtLte string) WorkflowDefinitionQueryInterface
+
+	HasEdgeDefinitionID() bool
+	EdgeDefinitionID() string
+	SetEdgeDefinitionID(edgeDefinitionID string) WorkflowDefinitionQueryInterface
+
 	HasID() bool
 	ID() string
-	SetID(id string) EdgeQueryInterface
+	SetID(id string) WorkflowDefinitionQueryInterface
+
+	HasIDIn() bool
+	IDIn() []string
+	SetIDIn(idIn []string) WorkflowDefinitionQueryInterface
+
+	HasFromStepID() bool
+	FromStepID() string
+	SetFromStepID(fromStepID string) WorkflowDefinitionQueryInterface
+
+	HasToStepID() bool
+	ToStepID() string
+	SetToStepID(toStepID string) WorkflowDefinitionQueryInterface
+
+	HasUpdatedAtGte() bool
+	UpdatedAtGte() string
+	SetUpdatedAtGte(updatedAtGte string) WorkflowDefinitionQueryInterface
+
+	HasUpdatedAtLte() bool
+	UpdatedAtLte() string
+	SetUpdatedAtLte(updatedAtLte string) WorkflowDefinitionQueryInterface
+
+	HasLimit() bool
+	Limit() int
+	SetLimit(limit int) WorkflowDefinitionQueryInterface
+
+	HasOffset() bool
+	Offset() int
+	SetOffset(offset int) WorkflowDefinitionQueryInterface
+
+	HasSortOrder() bool
+	SortOrder() string
+	SetSortOrder(sortOrder string) WorkflowDefinitionQueryInterface
+
+	HasOrderBy() bool
+	OrderBy() string
+	SetOrderBy(orderBy string) WorkflowDefinitionQueryInterface
 }
 
 type EdgeDefinitionQueryInterface interface {
+	Validate() error
+
+	IsCountOnly() bool
+	SetCountOnly(countOnly bool) WorkflowDefinitionQueryInterface
+
+	Columns() []string
+	SetColumns(columns []string) WorkflowDefinitionQueryInterface
+
+	SoftDeletedIncluded() bool
+	SetSoftDeletedIncluded(softDeletedIncluded bool) WorkflowDefinitionQueryInterface
+
+	HasCreatedAtGte() bool
+	CreatedAtGte() string
+	SetCreatedAtGte(createdAtGte string) WorkflowDefinitionQueryInterface
+
+	HasCreatedAtLte() bool
+	CreatedAtLte() string
+	SetCreatedAtLte(createdAtLte string) WorkflowDefinitionQueryInterface
+
 	HasID() bool
 	ID() string
-	SetID(id string) EdgeDefinitionQueryInterface
+	SetID(id string) WorkflowDefinitionQueryInterface
+
+	HasIDIn() bool
+	IDIn() []string
+	SetIDIn(idIn []string) WorkflowDefinitionQueryInterface
+
+	HasFromStepID() bool
+	FromStepID() string
+	SetFromStepID(fromStepID string) WorkflowDefinitionQueryInterface
+
+	HasToStepID() bool
+	ToStepID() string
+	SetToStepID(toStepID string) WorkflowDefinitionQueryInterface
+
+	HasUpdatedAtGte() bool
+	UpdatedAtGte() string
+	SetUpdatedAtGte(updatedAtGte string) WorkflowDefinitionQueryInterface
+
+	HasUpdatedAtLte() bool
+	UpdatedAtLte() string
+	SetUpdatedAtLte(updatedAtLte string) WorkflowDefinitionQueryInterface
+
+	HasLimit() bool
+	Limit() int
+	SetLimit(limit int) WorkflowDefinitionQueryInterface
+
+	HasOffset() bool
+	Offset() int
+	SetOffset(offset int) WorkflowDefinitionQueryInterface
+
+	HasSortOrder() bool
+	SortOrder() string
+	SetSortOrder(sortOrder string) WorkflowDefinitionQueryInterface
+
+	HasOrderBy() bool
+	OrderBy() string
+	SetOrderBy(orderBy string) WorkflowDefinitionQueryInterface
 }
 
 type StepQueryInterface interface {
+	Validate() error
+
+	IsCountOnly() bool
+	SetCountOnly(countOnly bool) WorkflowDefinitionQueryInterface
+
+	Columns() []string
+	SetColumns(columns []string) WorkflowDefinitionQueryInterface
+
+	SoftDeletedIncluded() bool
+	SetSoftDeletedIncluded(softDeletedIncluded bool) WorkflowDefinitionQueryInterface
+
+	HasCreatedAtGte() bool
+	CreatedAtGte() string
+	SetCreatedAtGte(createdAtGte string) WorkflowDefinitionQueryInterface
+
+	HasCreatedAtLte() bool
+	CreatedAtLte() string
+	SetCreatedAtLte(createdAtLte string) WorkflowDefinitionQueryInterface
+
 	HasID() bool
 	ID() string
-	SetID(id string) StepQueryInterface
+	SetID(id string) WorkflowDefinitionQueryInterface
+
+	HasIDIn() bool
+	IDIn() []string
+	SetIDIn(idIn []string) WorkflowDefinitionQueryInterface
+
+	HasStatus() bool
+	Status() string
+	SetStatus(status string) WorkflowDefinitionQueryInterface
+
+	HasStatusIn() bool
+	StatusIn() []string
+	SetStatusIn(statusIn []string) WorkflowDefinitionQueryInterface
+
+	HasUpdatedAtGte() bool
+	UpdatedAtGte() string
+	SetUpdatedAtGte(updatedAtGte string) WorkflowDefinitionQueryInterface
+
+	HasUpdatedAtLte() bool
+	UpdatedAtLte() string
+	SetUpdatedAtLte(updatedAtLte string) WorkflowDefinitionQueryInterface
+
+	HasWorkflowID() bool
+	WorkflowID() string
+	SetWorkflowID(workflowID string) WorkflowDefinitionQueryInterface
+
+	HasStepDefinitionID() bool
+	StepDefinitionID() string
+	SetStepDefinitionID(stepDefinitionID string) WorkflowDefinitionQueryInterface
+
+	HasLimit() bool
+	Limit() int
+	SetLimit(limit int) WorkflowDefinitionQueryInterface
+
+	HasOffset() bool
+	Offset() int
+	SetOffset(offset int) WorkflowDefinitionQueryInterface
+
+	HasSortOrder() bool
+	SortOrder() string
+	SetSortOrder(sortOrder string) WorkflowDefinitionQueryInterface
+
+	HasOrderBy() bool
+	OrderBy() string
+	SetOrderBy(orderBy string) WorkflowDefinitionQueryInterface
 }
 
 type StepDefinitionQueryInterface interface {
+	Validate() error
+
+	IsCountOnly() bool
+	SetCountOnly(countOnly bool) StepDefinitionQueryInterface
+
+	Columns() []string
+	SetColumns(columns []string) StepDefinitionQueryInterface
+
+	SoftDeletedIncluded() bool
+	SetSoftDeletedIncluded(softDeletedIncluded bool) StepDefinitionQueryInterface
+
+	HasCreatedAtGte() bool
+	CreatedAtGte() string
+	SetCreatedAtGte(createdAtGte string) StepDefinitionQueryInterface
+
+	HasCreatedAtLte() bool
+	CreatedAtLte() string
+	SetCreatedAtLte(createdAtLte string) StepDefinitionQueryInterface
+
 	HasID() bool
 	ID() string
 	SetID(id string) StepDefinitionQueryInterface
+
+	HasIDIn() bool
+	IDIn() []string
+	SetIDIn(idIn []string) StepDefinitionQueryInterface
+
+	HasUpdatedAtGte() bool
+	UpdatedAtGte() string
+	SetUpdatedAtGte(updatedAtGte string) StepDefinitionQueryInterface
+
+	HasUpdatedAtLte() bool
+	UpdatedAtLte() string
+	SetUpdatedAtLte(updatedAtLte string) StepDefinitionQueryInterface
+
+	HasWorkflowDefinitionID() bool
+	WorkflowDefinitionID() string
+	SetWorkflowDefinitionID(workflowDefinitionID string) StepDefinitionQueryInterface
+
+	HasLimit() bool
+	Limit() int
+	SetLimit(limit int) StepDefinitionQueryInterface
+
+	HasOffset() bool
+	Offset() int
+	SetOffset(offset int) StepDefinitionQueryInterface
+
+	HasOrderBy() bool
+	OrderBy() string
+	SetOrderBy(orderBy string) StepDefinitionQueryInterface
 }
 
 type WorkflowQueryInterface interface {
+	Validate() error
+
+	IsCountOnly() bool
+	SetCountOnly(countOnly bool) WorkflowDefinitionQueryInterface
+
+	Columns() []string
+	SetColumns(columns []string) WorkflowDefinitionQueryInterface
+
+	SoftDeletedIncluded() bool
+	SetSoftDeletedIncluded(softDeletedIncluded bool) WorkflowDefinitionQueryInterface
+
+	HasCreatedAtGte() bool
+	CreatedAtGte() string
+	SetCreatedAtGte(createdAtGte string) WorkflowDefinitionQueryInterface
+
+	HasCreatedAtLte() bool
+	CreatedAtLte() string
+	SetCreatedAtLte(createdAtLte string) WorkflowDefinitionQueryInterface
+
 	HasID() bool
 	ID() string
-	SetID(id string) WorkflowQueryInterface
+	SetID(id string) WorkflowDefinitionQueryInterface
+
+	HasIDIn() bool
+	IDIn() []string
+	SetIDIn(idIn []string) WorkflowDefinitionQueryInterface
+
+	HasStatus() bool
+	Status() string
+	SetStatus(status string) WorkflowDefinitionQueryInterface
+
+	HasStatusIn() bool
+	StatusIn() []string
+	SetStatusIn(statusIn []string) WorkflowDefinitionQueryInterface
+
+	HasUpdatedAtGte() bool
+	UpdatedAtGte() string
+	SetUpdatedAtGte(updatedAtGte string) WorkflowDefinitionQueryInterface
+
+	HasUpdatedAtLte() bool
+	UpdatedAtLte() string
+	SetUpdatedAtLte(updatedAtLte string) WorkflowDefinitionQueryInterface
+
+	HasLimit() bool
+	Limit() int
+	SetLimit(limit int) WorkflowDefinitionQueryInterface
+
+	HasOffset() bool
+	Offset() int
+	SetOffset(offset int) WorkflowDefinitionQueryInterface
+
+	HasSortOrder() bool
+	SortOrder() string
+	SetSortOrder(sortOrder string) WorkflowDefinitionQueryInterface
+
+	HasOrderBy() bool
+	OrderBy() string
+	SetOrderBy(orderBy string) WorkflowDefinitionQueryInterface
 }
 
 type WorkflowDefinitionQueryInterface interface {

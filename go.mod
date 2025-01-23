@@ -7,12 +7,12 @@ require (
 	github.com/gouniverse/base v0.7.0
 	github.com/gouniverse/dataobject v0.3.0
 	github.com/mattn/go-sqlite3 v1.14.24
+	github.com/samber/lo v1.47.0
+	github.com/spf13/cast v1.7.1
 )
 
 require (
 	github.com/google/uuid v1.6.0 // indirect
-	github.com/samber/lo v1.47.0 // indirect
-	github.com/spf13/cast v1.7.1 // indirect
 	golang.org/x/text v0.21.0 // indirect
 )
 
@@ -21,5 +21,5 @@ require (
 	github.com/georgysavva/scany v1.2.2 // indirect
 	github.com/gouniverse/maputils v0.7.0 // indirect
 	github.com/gouniverse/sb v0.8.0
-	github.com/gouniverse/uid v1.5.0 // indirect
+	github.com/gouniverse/uid v1.5.0
 )
