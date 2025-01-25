@@ -178,7 +178,8 @@ func Test_Store_StepDefinitionSoftDeleteByID(t *testing.T) {
 	}
 
 	stepDefinition := NewStepDefinition().
-		SetName("Workflow 1")
+		SetWorkflowDefinitionID("WORKFLOW_DEFINITION_O1").
+		SetName("Step 1")
 
 	err = store.StepDefinitionCreate(context.Background(), stepDefinition)
 	if err != nil {

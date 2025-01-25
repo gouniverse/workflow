@@ -9,35 +9,35 @@ type StoreInterface interface {
 	AutoMigrateEnabled() bool
 	DebugEnabled() bool
 
-	// EdgeCount(options EdgeQueryInterface) (int64, error)
-	// EdgeCreate(Edge EdgeInterface) error
-	// EdgeDelete(Edge EdgeInterface) error
-	// EdgeDeleteByID(id string) error
-	// EdgeFindByID(EdgeID string) (EdgeInterface, error)
-	// EdgeList(query EdgeQueryInterface) ([]EdgeInterface, error)
-	// EdgeSoftDelete(Edge EdgeInterface) error
-	// EdgeSoftDeleteByID(id string) error
-	// EdgeUpdate(Edge EdgeInterface) error
+	// EdgeCount(ctx context.Context,options EdgeQueryInterface) (int64, error)
+	// EdgeCreate(ctx context.Context,Edge EdgeInterface) error
+	// EdgeDelete(ctx context.Context,Edge EdgeInterface) error
+	// EdgeDeleteByID(ctx context.Context,id string) error
+	// EdgeFindByID(ctx context.Context,EdgeID string) (EdgeInterface, error)
+	// EdgeList(ctx context.Context,query EdgeQueryInterface) ([]EdgeInterface, error)
+	// EdgeSoftDelete(ctx context.Context,Edge EdgeInterface) error
+	// EdgeSoftDeleteByID(ctx context.Context,id string) error
+	// EdgeUpdate(ctx context.Context,Edge EdgeInterface) error
 
-	// EdgeDefinitionCount(options EdgeDefinitionQueryInterface) (int64, error)
-	// EdgeDefinitionCreate(EdgeDefinition EdgeDefinitionInterface) error
-	// EdgeDefinitionDelete(EdgeDefinition EdgeDefinitionInterface) error
-	// EdgeDefinitionDeleteByID(id string) error
-	// EdgeDefinitionFindByID(EdgeDefinitionID string) (EdgeDefinitionInterface, error)
-	// EdgeDefinitionList(query EdgeDefinitionQueryInterface) ([]EdgeDefinitionInterface, error)
-	// EdgeDefinitionSoftDelete(EdgeDefinition EdgeDefinitionInterface) error
-	// EdgeDefinitionSoftDeleteByID(id string) error
-	// EdgeDefinitionUpdate(EdgeDefinition EdgeDefinitionInterface) error
+	EdgeDefinitionCount(ctx context.Context, options EdgeDefinitionQueryInterface) (int64, error)
+	EdgeDefinitionCreate(ctx context.Context, EdgeDefinition EdgeDefinitionInterface) error
+	EdgeDefinitionDelete(ctx context.Context, EdgeDefinition EdgeDefinitionInterface) error
+	EdgeDefinitionDeleteByID(ctx context.Context, id string) error
+	EdgeDefinitionFindByID(ctx context.Context, EdgeDefinitionID string) (EdgeDefinitionInterface, error)
+	EdgeDefinitionList(ctx context.Context, query EdgeDefinitionQueryInterface) ([]EdgeDefinitionInterface, error)
+	EdgeDefinitionSoftDelete(ctx context.Context, EdgeDefinition EdgeDefinitionInterface) error
+	EdgeDefinitionSoftDeleteByID(ctx context.Context, id string) error
+	EdgeDefinitionUpdate(ctx context.Context, EdgeDefinition EdgeDefinitionInterface) error
 
-	// StepCount(options StepQueryInterface) (int64, error)
-	// StepCreate(Step StepInterface) error
-	// StepDelete(Step StepInterface) error
-	// StepDeleteByID(id string) error
-	// StepFindByID(StepID string) (StepInterface, error)
-	// StepList(query StepQueryInterface) ([]StepInterface, error)
-	// StepSoftDelete(Step StepInterface) error
-	// StepSoftDeleteByID(id string) error
-	// StepUpdate(Step StepInterface) error
+	// StepCount(ctx context.Context,options StepQueryInterface) (int64, error)
+	// StepCreate(ctx context.Context,Step StepInterface) error
+	// StepDelete(ctx context.Context,Step StepInterface) error
+	// StepDeleteByID(ctx context.Context,id string) error
+	// StepFindByID(ctx context.Context,StepID string) (StepInterface, error)
+	// StepList(ctx context.Context,query StepQueryInterface) ([]StepInterface, error)
+	// StepSoftDelete(ctx context.Context,Step StepInterface) error
+	// StepSoftDeleteByID(ctx context.Context,id string) error
+	// StepUpdate(ctx context.Context,Step StepInterface) error
 
 	StepDefinitionCount(ctx context.Context, options StepDefinitionQueryInterface) (int64, error)
 	StepDefinitionCreate(ctx context.Context, StepDefinition StepDefinitionInterface) error

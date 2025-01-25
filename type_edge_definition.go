@@ -1,10 +1,32 @@
 package workflow
 
-import "github.com/gouniverse/dataobject"
+import (
+	"github.com/dromara/carbon/v2"
+	"github.com/gouniverse/dataobject"
+	"github.com/gouniverse/sb"
+	"github.com/gouniverse/uid"
+)
+
+// == CONSTRUCTORS =============================================================
 
 func NewEdgeDefinition() EdgeDefinitionInterface {
-	return &edgeDefinition{}
+	o := &edgeDefinition{}
+
+	o.SetID(uid.HumanUid()).
+		SetCreatedAt(carbon.Now(carbon.UTC).ToDateTimeString(carbon.UTC)).
+		SetUpdatedAt(carbon.Now(carbon.UTC).ToDateTimeString(carbon.UTC)).
+		SetSoftDeletedAt(sb.MAX_DATETIME)
+
+	return o
 }
+
+func NewEdgeDefinitionFromExistingData(data map[string]string) EdgeDefinitionInterface {
+	o := &edgeDefinition{}
+	o.Hydrate(data)
+	return o
+}
+
+// == TYPE ====================================================================
 
 type edgeDefinition struct {
 	dataobject.DataObject
@@ -43,6 +65,15 @@ func (ed *edgeDefinition) FromStepDefinitionID() string {
 
 func (ed *edgeDefinition) SetFromStepDefinitionID(fromStepDefinitionID string) EdgeDefinitionInterface {
 	ed.Set(COLUMN_FROM_STEP_DEFINITION_ID, fromStepDefinitionID)
+	return ed
+}
+
+func (ed *edgeDefinition) SoftDeletedAt() string {
+	return ed.Get(COLUMN_SOFT_DELETED_AT)
+}
+
+func (ed *edgeDefinition) SetSoftDeletedAt(softDeletedAt string) EdgeDefinitionInterface {
+	ed.Set(COLUMN_SOFT_DELETED_AT, softDeletedAt)
 	return ed
 }
 

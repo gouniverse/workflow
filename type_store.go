@@ -317,9 +317,14 @@ func (store *store) sqlCreateEdgeDefinitionTable() string {
 			PrimaryKey: true,
 		}).
 		Column(sb.Column{
-			Name:   COLUMN_NAME,
+			Name:   COLUMN_FROM_STEP_DEFINITION_ID,
 			Type:   sb.COLUMN_TYPE_STRING,
-			Length: 255,
+			Length: 40,
+		}).
+		Column(sb.Column{
+			Name:   COLUMN_TO_STEP_DEFINITION_ID,
+			Type:   sb.COLUMN_TYPE_STRING,
+			Length: 40,
 		}).
 		Column(sb.Column{
 			Name: COLUMN_CREATED_AT,
@@ -327,6 +332,10 @@ func (store *store) sqlCreateEdgeDefinitionTable() string {
 		}).
 		Column(sb.Column{
 			Name: COLUMN_UPDATED_AT,
+			Type: sb.COLUMN_TYPE_DATETIME,
+		}).
+		Column(sb.Column{
+			Name: COLUMN_SOFT_DELETED_AT,
 			Type: sb.COLUMN_TYPE_DATETIME,
 		}).
 		CreateIfNotExists()

@@ -22,6 +22,10 @@ type WorkflowDefinitionInterface interface {
 }
 
 type WorkflowInterface interface {
+	Data() map[string]string
+	DataChanged() map[string]string
+	MarkAsNotDirty()
+
 	ID() string
 	SetID(id string) WorkflowInterface
 
@@ -69,6 +73,10 @@ type StepDefinitionInterface interface {
 }
 
 type StepInterface interface {
+	Data() map[string]string
+	DataChanged() map[string]string
+	MarkAsNotDirty()
+
 	ID() string
 	SetID(id string) StepInterface
 
@@ -92,6 +100,10 @@ type StepInterface interface {
 }
 
 type EdgeDefinitionInterface interface {
+	Data() map[string]string
+	DataChanged() map[string]string
+	MarkAsNotDirty()
+
 	ID() string
 	SetID(id string) EdgeDefinitionInterface
 
@@ -109,9 +121,16 @@ type EdgeDefinitionInterface interface {
 
 	UpdatedAt() string
 	SetUpdatedAt(updatedAt string) EdgeDefinitionInterface
+
+	SoftDeletedAt() string
+	SetSoftDeletedAt(softDeletedAt string) EdgeDefinitionInterface
 }
 
 type EdgeInterface interface {
+	Data() map[string]string
+	DataChanged() map[string]string
+	MarkAsNotDirty()
+
 	ID() string
 	SetID(id string) EdgeInterface
 

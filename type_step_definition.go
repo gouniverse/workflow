@@ -29,11 +29,13 @@ func NewStepDefinitionFromExistingData(data map[string]string) StepDefinitionInt
 	return o
 }
 
-// == CLASS ====================================================================
+// == TYPE ====================================================================
 
 type stepDefinition struct {
 	dataobject.DataObject
 }
+
+// == SETTERS & GETTERS ========================================================
 
 func (sd *stepDefinition) CreatedAt() string {
 	return sd.Get(COLUMN_CREATED_AT)
