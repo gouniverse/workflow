@@ -56,6 +56,7 @@ For instance:
 - https://github.com/matryer/flower/blob/master/flower.go
 - https://github.com/hibiken/asynq
 - https://github.com/gocelery/gocelery
-- https://github.com/runabol/tork - uses docker images
+- https://github.com/runabol/tork - uses container images
 - https://github.com/reddec/trusted-cgi
   - (same author) https://github.com/reddec/nano-run - small runner
+- https://github.com/concourse/concourse - uses container images
