@@ -7,6 +7,8 @@ import (
 	"github.com/gouniverse/uid"
 )
 
+// == CONSTRUCTORS =============================================================
+
 func NewWorkflowDefinition() WorkflowDefinitionInterface {
 	wd := &workflowDefinition{}
 
@@ -19,15 +21,19 @@ func NewWorkflowDefinition() WorkflowDefinitionInterface {
 	return wd
 }
 
-type workflowDefinition struct {
-	dataobject.DataObject
-}
-
 func NewWorkflowDefinitionFromExistingData(data map[string]string) WorkflowDefinitionInterface {
 	o := &workflowDefinition{}
 	o.Hydrate(data)
 	return o
 }
+
+// == CLASS ====================================================================
+
+type workflowDefinition struct {
+	dataobject.DataObject
+}
+
+// == SETTERS & GETTERS ========================================================
 
 func (wf *workflowDefinition) CreatedAt() string {
 	return wf.Get(COLUMN_CREATED_AT)

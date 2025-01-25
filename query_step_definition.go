@@ -208,6 +208,22 @@ func (q *stepDefinitionQueryImpl) SetOrderBy(orderBy string) StepDefinitionQuery
 	return q
 }
 
+func (q *stepDefinitionQueryImpl) HasSortOrder() bool {
+	return q.hasProperty("sort_order")
+}
+
+func (q *stepDefinitionQueryImpl) SortOrder() string {
+	if q.HasSortOrder() {
+		return q.properties["sort_order"].(string)
+	}
+	return ""
+}
+
+func (q *stepDefinitionQueryImpl) SetSortOrder(sortOrder string) StepDefinitionQueryInterface {
+	q.properties["sort_order"] = sortOrder
+	return q
+}
+
 func (q *stepDefinitionQueryImpl) HasStatus() bool {
 	return q.hasProperty("status")
 }

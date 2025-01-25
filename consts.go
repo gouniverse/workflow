@@ -31,3 +31,7 @@ const STEP_STATUS_RUNNING = "running"
 const STEP_STATUS_SCHEDULED = "scheduled"
 const STEP_STATUS_STOPPED = "stopped"
 const STEP_STATUS_SUCCESS = "success"
+
+const STEP_DEFINITION_STATUS_DRAFT = "draft"
+const STEP_DEFINITION_STATUS_ACTIVE = "active"
+const STEP_DEFINITION_STATUS_INACTIVE = "inactive"

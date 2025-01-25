@@ -39,25 +39,25 @@ type StoreInterface interface {
 	// StepSoftDeleteByID(id string) error
 	// StepUpdate(Step StepInterface) error
 
-	// StepDefinitionCount(options StepDefinitionQueryInterface) (int64, error)
-	// StepDefinitionCreate(StepDefinition StepDefinitionInterface) error
-	// StepDefinitionDelete(StepDefinition StepDefinitionInterface) error
-	// StepDefinitionDeleteByID(id string) error
-	// StepDefinitionFindByID(StepDefinitionID string) (StepDefinitionInterface, error)
-	// StepDefinitionList(query StepDefinitionQueryInterface) ([]StepDefinitionInterface, error)
-	// StepDefinitionSoftDelete(StepDefinition StepDefinitionInterface) error
-	// StepDefinitionSoftDeleteByID(id string) error
-	// StepDefinitionUpdate(StepDefinition StepDefinitionInterface) error
+	StepDefinitionCount(ctx context.Context, options StepDefinitionQueryInterface) (int64, error)
+	StepDefinitionCreate(ctx context.Context, StepDefinition StepDefinitionInterface) error
+	StepDefinitionDelete(ctx context.Context, StepDefinition StepDefinitionInterface) error
+	StepDefinitionDeleteByID(ctx context.Context, id string) error
+	StepDefinitionFindByID(ctx context.Context, StepDefinitionID string) (StepDefinitionInterface, error)
+	StepDefinitionList(ctx context.Context, query StepDefinitionQueryInterface) ([]StepDefinitionInterface, error)
+	StepDefinitionSoftDelete(ctx context.Context, StepDefinition StepDefinitionInterface) error
+	StepDefinitionSoftDeleteByID(ctx context.Context, id string) error
+	StepDefinitionUpdate(ctx context.Context, StepDefinition StepDefinitionInterface) error
 
-	// WorkflowCount(options WorkflowQueryInterface) (int64, error)
-	// WorkflowCreate(Workflow WorkflowInterface) error
-	// WorkflowDelete(Workflow WorkflowInterface) error
-	// WorkflowDeleteByID(id string) error
-	// WorkflowFindByID(WorkflowID string) (WorkflowInterface, error)
-	// WorkflowList(query WorkflowQueryInterface) ([]WorkflowInterface, error)
-	// WorkflowSoftDelete(Workflow WorkflowInterface) error
-	// WorkflowSoftDeleteByID(id string) error
-	// WorkflowUpdate(Workflow WorkflowInterface) error
+	// WorkflowCount(ctx context.Context,options WorkflowQueryInterface) (int64, error)
+	// WorkflowCreate(ctx context.Context,Workflow WorkflowInterface) error
+	// WorkflowDelete(ctx context.Context,Workflow WorkflowInterface) error
+	// WorkflowDeleteByID(ctx context.Context,id string) error
+	// WorkflowFindByID(ctx context.Context,WorkflowID string) (WorkflowInterface, error)
+	// WorkflowList(ctx context.Context,query WorkflowQueryInterface) ([]WorkflowInterface, error)
+	// WorkflowSoftDelete(ctx context.Context,Workflow WorkflowInterface) error
+	// WorkflowSoftDeleteByID(ctx context.Context,id string) error
+	// WorkflowUpdate(ctx context.Context,Workflow WorkflowInterface) error
 
 	WorkflowDefinitionCount(ctx context.Context, options WorkflowDefinitionQueryInterface) (int64, error)
 	WorkflowDefinitionCreate(ctx context.Context, WorkflowDefinition WorkflowDefinitionInterface) error
@@ -293,6 +293,14 @@ type StepDefinitionQueryInterface interface {
 	IDIn() []string
 	SetIDIn(idIn []string) StepDefinitionQueryInterface
 
+	HasStatus() bool
+	Status() string
+	SetStatus(status string) StepDefinitionQueryInterface
+
+	HasStatusIn() bool
+	StatusIn() []string
+	SetStatusIn(statusIn []string) StepDefinitionQueryInterface
+
 	HasUpdatedAtGte() bool
 	UpdatedAtGte() string
 	SetUpdatedAtGte(updatedAtGte string) StepDefinitionQueryInterface
@@ -316,6 +324,10 @@ type StepDefinitionQueryInterface interface {
 	HasOrderBy() bool
 	OrderBy() string
 	SetOrderBy(orderBy string) StepDefinitionQueryInterface
+
+	HasSortOrder() bool
+	SortOrder() string
+	SetSortOrder(sortOrder string) StepDefinitionQueryInterface
 }
 
 type WorkflowQueryInterface interface {

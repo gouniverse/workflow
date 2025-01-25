@@ -242,6 +242,16 @@ func (store *store) sqlCreateStepDefinitionTable() string {
 			PrimaryKey: true,
 		}).
 		Column(sb.Column{
+			Name:   COLUMN_WORKFLOW_DEFINITION_ID,
+			Type:   sb.COLUMN_TYPE_STRING,
+			Length: 40,
+		}).
+		Column(sb.Column{
+			Name:   COLUMN_STATUS,
+			Type:   sb.COLUMN_TYPE_STRING,
+			Length: 20,
+		}).
+		Column(sb.Column{
 			Name:   COLUMN_NAME,
 			Type:   sb.COLUMN_TYPE_STRING,
 			Length: 255,
@@ -252,6 +262,10 @@ func (store *store) sqlCreateStepDefinitionTable() string {
 		}).
 		Column(sb.Column{
 			Name: COLUMN_UPDATED_AT,
+			Type: sb.COLUMN_TYPE_DATETIME,
+		}).
+		Column(sb.Column{
+			Name: COLUMN_SOFT_DELETED_AT,
 			Type: sb.COLUMN_TYPE_DATETIME,
 		}).
 		CreateIfNotExists()

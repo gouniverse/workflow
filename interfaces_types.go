@@ -42,11 +42,18 @@ type WorkflowInterface interface {
 }
 
 type StepDefinitionInterface interface {
+	Data() map[string]string
+	DataChanged() map[string]string
+	MarkAsNotDirty()
+
 	ID() string
 	SetID(id string) StepDefinitionInterface
 
 	WorkflowDefinitionID() string
 	SetWorkflowDefinitionID(workflowDefinitionID string) StepDefinitionInterface
+
+	Status() string
+	SetStatus(status string) StepDefinitionInterface
 
 	Name() string
 	SetName(name string) StepDefinitionInterface
@@ -56,6 +63,9 @@ type StepDefinitionInterface interface {
 
 	UpdatedAt() string
 	SetUpdatedAt(updatedAt string) StepDefinitionInterface
+
+	SoftDeletedAt() string
+	SetSoftDeletedAt(softDeletedAt string) StepDefinitionInterface
 }
 
 type StepInterface interface {
